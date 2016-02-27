@@ -1,0 +1,86 @@
+BANK TESTCASES
+(Assume server is running and client is connected or attempting to connect. Client is typing input, server is printing output.)
+
+TESTCASE 1:
+
+Input- open Mike
+
+Output- “User created successfully.”
+
+
+TESTCASE 2:
+
+Input- open Mike  (again.)
+
+Output- “This user already exists. Try to open a different account under a different name.”
+
+
+TESTCASE 3:
+
+Input- start Mike
+
+Output- “You have opened a new session.”
+
+
+TESTCASE 4:
+
+Input- start Kyle121   (while within Mike start session)
+
+Output- “You should <finish> your current session before trying to start.”
+
+
+TESTCASE 5: 
+
+Input- credit 5090.99
+
+Output- “Your current balance after credit is: $5090.99.”
+
+
+TESTCASE 6:
+
+Input- debit 500.12
+
+Output- “Your current balance after debit is: $4590.87.”
+
+
+TESTCASE 7:
+
+Input- balance
+
+Output- “You current balance is:$4590.87.”
+
+
+TESTCASE 8:
+
+Input- finish
+
+Output- “We are done with the current session.” (on the server side)
+	“You have chosen to finish your session.” (on the client side)
+
+
+TESTCASE 9: a new client tries to start a session for a name that has not been opened
+
+Input- start Nick
+
+Output- “No opened account matches that name.”
+
+
+TESTCASE 10: NOT WITHIN A STARTED SESSION
+
+Input- debit 500 (or) credit 20.99 (or) balance
+
+Output- “You must first start an account session before attempting to check your balance, credit, or debit.”
+
+
+TESTCASE 11: a new client tries to start a session that is currently in use…
+
+Input- start Mike  (currently in use by another client user)
+
+Output- “Mike’s account is currently in session.”
+
+
+TESTCASE 12:
+
+Input- exit Kyle121   (while within Mike start session)
+
+Output- “You should <finish> your current session before trying to exit.”
